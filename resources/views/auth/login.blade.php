@@ -77,5 +77,10 @@
             </div>
         </div>
     </div>
+    <!-- -->
+    <div id="app">
+        <example-component route-register="{{ route('register') }}" ></example-component>
+    </div>
+    <!-- -->
 </div>
 @endsection
