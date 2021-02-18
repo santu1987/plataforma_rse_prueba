@@ -2049,25 +2049,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['RouteRegister', 'OldName', 'OldEmail', 'TituloRegister', 'TituloName', 'TituloEmail', 'TituloPassword', 'TituloConfirmarPassword'],
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  data: function data() {
+    return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    };
   }
 });
 
@@ -37745,9 +37735,11 @@ var render = function() {
                 }
               },
               [
-                _vm._v(
-                  "\n                        @csrf\n\n                        "
-                ),
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.csrf }
+                }),
+                _vm._v(" "),
                 _c("div", { staticClass: "form-group row" }, [
                   _c(
                     "label",
@@ -37760,8 +37752,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("input", {
-                      staticClass:
-                        "form-control @error('name') is-invalid @enderror",
+                      staticClass: "form-control",
                       attrs: {
                         id: "name",
                         type: "text",
@@ -37771,21 +37762,7 @@ var render = function() {
                         autofocus: ""
                       },
                       domProps: { value: _vm.OldName }
-                    }),
-                    _vm._v(
-                      "\n\n                                @error('name')\n                                    "
-                    ),
-                    _c(
-                      "span",
-                      {
-                        staticClass: "invalid-feedback",
-                        attrs: { role: "alert" }
-                      },
-                      [_c("strong", [_vm._v(_vm._s(_vm.$message))])]
-                    ),
-                    _vm._v(
-                      "\n                                @enderror\n                            "
-                    )
+                    })
                   ])
                 ]),
                 _vm._v(" "),
@@ -37801,8 +37778,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("input", {
-                      staticClass:
-                        "form-control @error('email') is-invalid @enderror",
+                      staticClass: "form-control",
                       attrs: {
                         id: "email",
                         type: "email",
@@ -37811,21 +37787,7 @@ var render = function() {
                         autocomplete: "email"
                       },
                       domProps: { value: _vm.OldEmail }
-                    }),
-                    _vm._v(
-                      "\n\n                                @error('email')\n                                    "
-                    ),
-                    _c(
-                      "span",
-                      {
-                        staticClass: "invalid-feedback",
-                        attrs: { role: "alert" }
-                      },
-                      [_c("strong", [_vm._v(_vm._s(_vm.$message))])]
-                    ),
-                    _vm._v(
-                      "\n                                @enderror\n                            "
-                    )
+                    })
                   ])
                 ]),
                 _vm._v(" "),
@@ -37839,33 +37801,7 @@ var render = function() {
                     [_vm._v(_vm._s(_vm.TituloPassword))]
                   ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("input", {
-                      staticClass:
-                        "form-control @error('password') is-invalid @enderror",
-                      attrs: {
-                        id: "password",
-                        type: "password",
-                        name: "password",
-                        required: "",
-                        autocomplete: "new-password"
-                      }
-                    }),
-                    _vm._v(
-                      "\n\n                                @error('password')\n                                    "
-                    ),
-                    _c(
-                      "span",
-                      {
-                        staticClass: "invalid-feedback",
-                        attrs: { role: "alert" }
-                      },
-                      [_c("strong", [_vm._v(_vm._s(_vm.$message))])]
-                    ),
-                    _vm._v(
-                      "\n                                @enderror\n                            "
-                    )
-                  ])
+                  _vm._m(0)
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group row" }, [
@@ -37878,7 +37814,7 @@ var render = function() {
                     [_vm._v(_vm._s(_vm.TituloConfirmarPassword))]
                   ),
                   _vm._v(" "),
-                  _vm._m(0)
+                  _vm._m(1)
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group row mb-0" }, [
@@ -37908,6 +37844,23 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "password",
+          type: "password",
+          name: "password",
+          required: "",
+          autocomplete: "new-password"
+        }
+      })
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
