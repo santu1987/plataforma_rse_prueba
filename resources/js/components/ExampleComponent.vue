@@ -7,6 +7,8 @@
 
                     <div class="card-body">
                         I'm an example component.
+                        <br />
+                        <button-component />
                     </div>
                 </div>
             </div>
